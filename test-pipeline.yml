@@ -1,0 +1,29 @@
+---
+jobs:
+- name: job
+  serial: true
+  public: true
+  plan:
+  - task: simple-task
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source: { repository: busybox }
+      run:
+        path: echo
+        args: ["Hello world!"]
+
+- name: set-pipeline
+  plan:
+  - get: resource
+    trigger: true
+  - set_pipeline: test_set_pipeline  # pipeline's name
+    file: test-pipeline.yml  # pipeline's config
+
+resources:
+- name: resource 
+  type: git
+  icon: github
+  source:
+    uri: https://github.com/ceco556/concourse-resources
