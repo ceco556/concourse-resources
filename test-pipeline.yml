@@ -18,7 +18,7 @@ jobs:
   plan:
   - get: resource
     trigger: true
-  - set_pipeline: test_set_pipeline  # pipeline's name
+  - set_pipeline: test_set_pipeline/test  # pipeline's name
     file: test-pipeline.yml  # pipeline's config
 
 resources:
