@@ -12,7 +12,7 @@ jobs:
         source: { repository: busybox }
       run:
         path: echo
-        args: ["Hello worldss!"]
+        args: ["Hello worldsss!"]
 
 - name: set-pipeline
   plan:
