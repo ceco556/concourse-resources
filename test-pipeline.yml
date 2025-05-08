@@ -18,8 +18,8 @@ jobs:
   plan:
   - get: resource
     trigger: true
-  - set_pipeline: test_set_pipeline/test  # pipeline's name
-    file: test-pipeline.yml  # pipeline's config
+  - set_pipeline: test_set_pipeline/test
+    file: resource/test-pipeline.yml
 
 resources:
 - name: resource 
@@ -27,3 +27,7 @@ resources:
   icon: github
   source:
     uri: https://github.com/ceco556/concourse-resources
+    git_config:
+    - name: safe.directory
+      value: '*'
+
