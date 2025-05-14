@@ -18,7 +18,7 @@ jobs:
   plan:
   - get: resource
     trigger: true
-  - set_pipeline: 8testtesttest
+  - set_pipeline: _testtesttest
     file: resource/test-pipeline.yml
 
 resources:
